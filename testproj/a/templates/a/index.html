@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayush's web page</title>
+    <link rel="stylesheet" href="{% static 'a/index.css'%}">
+</head>
+<body>
+    <nav>
+        <span>
+            <a href="/">
+                Home
+            </a>
+        </span>
+        <span>
+            <a href="#main">
+                About
+            </a>
+        </span>
+        <span>
+            <a href="#contact">
+                Contact
+            </a>
+        </span>
+        <span>
+            <a href="/formAdd">
+                Form
+            </a>
+        </span>
+        <span>
+            <a href="/showUser">
+                Retrive user
+            </a>
+        </span>
+    </nav>
+    <br>
+    <div class="randomQuote">
+        <h3>
+            Random Quote <br><br>
+            {{randomQuote}} -- {{author}}
+        </h3>
+    </div>
+    <br>
+    <main id="main">
+        <h1>
+            Time Travel
+        </h1>
+        <figure>
+            <img src="{% static 'a/tmimg.png'%}" alt="First Time Machine related Book">
+            <figcaption>
+                First Time Machine related Book
+            </figcaption>
+        </figure>
+        <p>
+            Time travel is the hypothetical activity of traveling into the past or future. Time travel is a widely recognized concept in philosophy and fiction, particularly science fiction. In fiction, time travel is typically achieved through the use of a hypothetical device known as a time machine. The idea of a time machine was popularized by H. G. Wells's 1895 novel The Time Machine.[1]
+
+It is uncertain whether time travel to the past would be physically possible. Such travel, if at all feasible, may give rise to questions of causality. Forward time travel, outside the usual sense of the perception of time, is an extensively observed phenomenon and is well understood within the framework of special relativity and general relativity. However, making one body advance or delay more than a few milliseconds compared to another body is not feasible with current technology. As for backward time travel, it is possible to find solutions in general relativity that allow for it, such as a rotating black hole. Traveling to an arbitrary point in spacetime has very limited support in theoretical physics, and is usually connected only with quantum mechanics or wormholes. 
+        </p>
+    </main><br>
+    <footer id="contact">
+        <h3>
+            Contact Us
+        </h3>
+        <div class="cig">
+            <div>
+                <address>
+                    Address line 1,
+                    Address line 2,
+                    City ,
+                    State,
+                    Pincode 
+                </address>
+            </div>
+            <div>
+                <button>
+                    <a href="mailto:abc@example.com">
+                        Contact us
+                    </a>
+                </button>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
