@@ -14,20 +14,25 @@
         </a>
     </nav>
     <br>
+    {% if userdata %}
     <div class="bg-[#212529] text-white font-mono text-center w-10/12 mx-auto p-3 rounded-lg border-1 border-2 border-solid">
         <h3 class="text-center text-white">
-            Name :- {{user.name}}
+            Name :- {{userdata.name}}
         </h3>
         <h3 class="text-center text-white">
-            Email :- {{user.email}}
+            Email :- {{userdata.email}}
         </h3>
         <h3 class="text-center text-white">
-            Age :- {{user.age}}
+            Age :- {{userdata.age}}
         </h3>
-    </div><br>
+    </div>
+    {% endif %}
+    <br>
+    {% if message %}
     <h1 class="text-red-500 text-center font-mono p-2 m-2">
         {{message}}
     </h1>
+    {% endif %}
     <br>
     <div class="bg-[#212529] font-mono text-green-500 border-2 border-solid border-white block mx-auto rounded-lg w-10/12 md:w-6/12 p-2">
         <h1 class="text-center">User Retrival Form</h1>
