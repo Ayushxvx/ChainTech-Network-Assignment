@@ -5,9 +5,9 @@ import json
 from .models import CustomUser
 # Create your views here.
 def index(request):
-    response = requests.get("https://api.quotable.io/random",verify=False)
+    response = requests.get("https://programming-quotesapi.vercel.app/api/random")
     if response.status_code == 200:
-        randQuote = response.json()["content"]
+        randQuote = response.json()["quote"]
         author = response.json()["author"]
         return render(request,"a/index.html",{"randomQuote":randQuote,"author":author})
     else:
@@ -38,9 +38,9 @@ def showUser(request):
     if request.method == "POST":
         name = request.POST.get("name")
         try:
-            user = CustomUser.objects.get(name=name)
-            if user:
-                return render(request,"a/showUser.html",{"user":user})
+            userdata = CustomUser.objects.get(name=name)
+            if userdata:
+                return render(request,"a/showUser.html",{"userdata":userdata})
         except:
             return render(request,"a/showUser.html",{"message":"No user found with given name"})
     return render(request,"a/showUser.html",{})
